@@ -16,8 +16,6 @@ class UrlForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log('props', this.props.createShortUrl)
-    console.log('state', this.state)
     this.props.createShortUrl(this.state)
     this.clearInputs();
   }

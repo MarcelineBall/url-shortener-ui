@@ -13,7 +13,6 @@ export class App extends Component {
   }
 
   createShortUrl = (newUrlToShorten) => {
-    console.log('newUrlToShorten', newUrlToShorten)
     postUrl(newUrlToShorten)
       .then(() => getUrls())
       .then(data => this.setState({ urls: data.urls }))
