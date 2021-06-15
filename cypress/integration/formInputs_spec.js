@@ -1,14 +1,7 @@
 describe('formInputs', () => {
   beforeEach(() => {
-    cy.fixture('mockShortUrls').then((mockShortUrls) => {
-      cy.intercept('http://localhost:3001/api/v1/urls', mockShortUrls)
-    })
-    cy.intercept('POST', 'http://localhost:3001/api/v1/urls', {
-      ok: true,
-      redirected: false,
-      status: 201,
-      statusText: "Created",
-      url: "http://localhost:3001/api/v1/urls"
+    cy.fixture('mockShortUrlsAfterPost').then((mockShortUrlsAfterPost) => {
+      cy.intercept('POST', 'http://localhost:3001/api/v1/urls', mockShortUrlsAfterPost)
     })
     cy.visit('http://localhost:3000/')
   })
@@ -24,7 +17,7 @@ describe('formInputs', () => {
 
   it('should display a new shortened url when the user fills out and submits the form', () => {
     cy.fixture('mockShortUrlsAfterPost').then((mockShortUrlsAfterPost) => {
-      cy.intercept('http://localhost:3001/api/v1/urls', mockShortUrlsAfterPost)
+      cy.intercept('GET', 'http://localhost:3001/api/v1/urls', mockShortUrlsAfterPost)
     })
     cy.get('input[name="title"]')
       .type('Cute Puppy!')
