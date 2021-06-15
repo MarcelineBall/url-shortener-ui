@@ -21,4 +21,6 @@ describe('formInputs', () => {
       .type('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdesignerdoginfo.files.wordpress.com%2F2012%2F10%2Fapricot-cavoodle-puppy-on-blue-blanket.jpg&f=1&nofb=1')
       .should('have.value', 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdesignerdoginfo.files.wordpress.com%2F2012%2F10%2Fapricot-cavoodle-puppy-on-blue-blanket.jpg&f=1&nofb=1')
   })
+
+  
 })
