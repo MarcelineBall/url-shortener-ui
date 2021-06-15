@@ -7,6 +7,9 @@ describe('formInputs', () => {
   })
 
   it('should be able to take user inputs into the input fields', () => {
+    cy.fixture('mockShortUrlsAfterPost').then((mockShortUrlsAfterPost) => {
+      cy.intercept('GET', 'http://localhost:3001/api/v1/urls', mockShortUrlsAfterPost)
+    })
     cy.get('input[name="title"]')
       .type('Cute Puppy!')
       .should('have.value', 'Cute Puppy!')
