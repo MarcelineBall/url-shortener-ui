@@ -1,0 +1,10 @@
+{
+  "urls": [
+    {
+      "id": "1",
+      "long_url":	"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pets4homes.co.uk%2Fimages%2Farticles%2F2659%2Flarge%2F9-great-ways-to-raise-a-happy-health-kitten-54f1c5f2a4368.jpg&f=1&nofb=1"
+      "short_url":	"http://localhost:3001/useshorturl/1"
+      "title":	"Rad pic"
+    }
+  ]
+}
