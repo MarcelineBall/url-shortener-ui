@@ -12,7 +12,9 @@ export class App extends Component {
     }
   }
 
-
+  createShortUrl = (newUrlToShorten) => {
+    
+  }
 
   componentDidMount() {
     getUrls()
