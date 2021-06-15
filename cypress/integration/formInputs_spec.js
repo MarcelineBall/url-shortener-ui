@@ -3,6 +3,13 @@ describe('formInputs', () => {
     cy.fixture('mockShortUrls').then((mockShortUrls) => {
       cy.intercept('http://localhost:3001/api/v1/urls', mockShortUrls)
     })
+    cy.intercept('POST', 'http://localhost:3001/api/v1/urls', {
+      ok: true,
+      redirected: false,
+      status: 201,
+      statusText: "Created",
+      url: "http://localhost:3001/api/v1/urls"
+    })
     cy.visit('http://localhost:3000/')
   })
 
