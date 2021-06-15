@@ -13,7 +13,8 @@ export class App extends Component {
   }
 
   createShortUrl = (newUrlToShorten) => {
-
+    postUrl(newUrlToShorten)
+      .then(data => console.log(data))
   }
 
   componentDidMount() {
