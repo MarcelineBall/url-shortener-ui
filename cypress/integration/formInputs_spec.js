@@ -6,4 +6,12 @@ describe('formInputs', () => {
     cy.visit('http://localhost:3000/')
   })
 
+  it('should be able to take user inputs into the input fields', () => {
+    cy.get('input[name="title"]')
+      .type('Cute Puppy!')
+      .should('have.value', 'Cute Puppy!')
+    cy.get('input[name="long_url"]')
+      .type('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdesignerdoginfo.files.wordpress.com%2F2012%2F10%2Fapricot-cavoodle-puppy-on-blue-blanket.jpg&f=1&nofb=1')
+      .should('have.value', 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdesignerdoginfo.files.wordpress.com%2F2012%2F10%2Fapricot-cavoodle-puppy-on-blue-blanket.jpg&f=1&nofb=1')
+  })
 })
