@@ -15,4 +15,10 @@ describe('pageView', () => {
       .get('a').contains('http://localhost:3001/useshorturl/1')
       .get('p').contains('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pets4homes.co.uk%2Fimages%2Farticles%2F2659%2Flarge%2F9-great-ways-to-raise-a-happy-health-kitten-54f1c5f2a4368.jpg&f=1&nofb=1')
   })
+
+  it('should display the form and it\'s inputs', () => {
+    cy.get('input[name="title"]').should('be.visible')
+      .get('input[name="long_url"]').should('be.visible')
+      .get('button').should('be.visible')
+  })
 })
