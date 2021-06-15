@@ -16,6 +16,7 @@ export class App extends Component {
     console.log('newUrlToShorten', newUrlToShorten)
     postUrl(newUrlToShorten)
       .then(() => getUrls())
+      .then(data => this.setState({ urls: data.urls }))
   }
 
   componentDidMount() {
